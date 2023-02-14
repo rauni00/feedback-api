@@ -60,5 +60,4 @@ app.use("/api/businesses", BusinessesRouter);
 app.use("/api/feedbacks", FeedbacksRouter);
 app.use("/api/dashboard", DashboardRouter);
 app.get("/", (req, res) => res.send("<h1>Welcome to Real Candid Feedback App</h1>"));
-
 app.use(errorHandler);

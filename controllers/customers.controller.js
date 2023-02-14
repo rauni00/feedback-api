@@ -61,18 +61,18 @@ export const addNewCustomer = async (req, res) => {
 		otp: Math.floor((Math.random() + 1) * 1000),
 	};
 
-	if (req.file) {
-		newCustomerDetails = {
-			profileImage: {
-				name: `${firstName.toUpperCase()}-Avatar`,
-				image: {
-					data: fs.readFileSync(path.join(__dirname.slice(0, -12) + "/public/uploaded-images/ABCDEFG-DP-123.jpeg")),
-					contentType: "image/png",
-				},
-			},
-			...newCustomerDetails,
-		};
-	}
+	// if (req.file) {
+	// 	newCustomerDetails = {
+	// 		profileImage: {
+	// 			name: `${firstName.toUpperCase()}-Avatar`,
+	// 			image: {
+	// 				data: fs.readFileSync(path.join(__dirname.slice(0, -12) + "/public/uploaded-images/ABCDEFG-DP-123.jpeg")),
+	// 				contentType: "image/png",
+	// 			},
+	// 		},
+	// 		...newCustomerDetails,
+	// 	};
+	// }
 
 	const addedCustomer = await CustomersModel.create(newCustomerDetails);
 	addedCustomer.save();

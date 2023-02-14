@@ -2,10 +2,10 @@ import express from "express";
 import tryCatch from "../utils/tryCatch.js";
 import authMiddleware from "../middleware/authMiddleware.js";
 import {
-  getAllFeedbacks,
-  addNewFeedback,
-  getCustomersFeedbacksByEmail,
-  getBusinessesFeedbacksByEmail,
+	getAllFeedbacks,
+	addNewFeedback,
+	getCustomersFeedbacksByEmail,
+	getBusinessesFeedbacksByEmail,
 } from "../controllers/feedbacks.controller.js";
 
 const router = express.Router();
@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", tryCatch(getAllFeedbacks));
 
 // Get Customers Feedbacks by Email
-router.get("/:email", getCustomersFeedbacksByEmail);
+router.get("/:email", tryCatch(getCustomersFeedbacksByEmail));
 
 // Get Businesses Feedbacks by Email
 // router.get("/:email", getBusinessesFeedbacksByEmail);

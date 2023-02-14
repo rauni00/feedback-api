@@ -19,7 +19,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use(express.static("./public"));
-app.get("/", (req, res) => res.send("<h1>Welcome to Real Candid Feedback App</h1>"));
 
 app.get("/email", (req, res) => {
 	sendgridmail.setApiKey(process.env.EMAIL_SENDING_API_KEY);
@@ -60,4 +59,6 @@ app.use("/api/customers", CustomersRouter);
 app.use("/api/businesses", BusinessesRouter);
 app.use("/api/feedbacks", FeedbacksRouter);
 app.use("/api/dashboard", DashboardRouter);
+app.get("/", (req, res) => res.send("<h1>Welcome to Real Candid Feedback App</h1>"));
+
 app.use(errorHandler);

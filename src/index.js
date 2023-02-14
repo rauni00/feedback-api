@@ -3,11 +3,11 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import sendgridmail from "@sendgrid/mail";
-import CustomersRouter from "./routes/customers.route.js";
-import BusinessesRouter from "./routes/businesses.route.js";
-import FeedbacksRouter from "./routes/feedbacks.route.js";
-import DashboardRouter from "./routes/dashboard.route.js";
-import errorHandler from "./utils/errorHandler.js";
+import CustomersRouter from "../routes/customers.route.js";
+import BusinessesRouter from "../routes/businesses.route.js";
+import FeedbacksRouter from "../routes/feedbacks.route.js";
+import DashboardRouter from "../routes/dashboard.route.js";
+import errorHandler from "../utils/errorHandler.js";
 
 dotenv.config();
 
